@@ -49,26 +49,31 @@ Instructions:
 2. Extract only relevant information related to the question.
 3. Generate the answer according to the given mark requirement.
 
-Mark-based answer length:
 
+
+Answer formatting rules:
+
+for 2 marks:
 2 Marks:
 - Give a short definition or direct answer
 - Include 2-3 important points
 
-5 Marks:
+for 5 Marks:
 - Give an introduction
 - Explain key concepts
 - Provide 4-5 important points
 - Add examples if needed
 
-10 Marks:
+for 10 Marks:
 - Provide a detailed explanation
 - Include introduction
 - Use multiple headings and subheadings
 - Explain concepts step-by-step
 - Add examples, diagrams (if applicable), advantages/disadvantages .end with tips
 
-13/15 Marks:
+
+
+for 13/15 Marks:
 - Write a complete university-level answer
 - Include:
   1. Title
@@ -81,48 +86,8 @@ Mark-based answer length:
   8. Applications
   9. Conclusion
 
-
-Answer formatting rules:
-
-Use this structure:
-
-# Title
-
-## Introduction
-
-(brief overview)
-
-## Definition / Meaning
-
-(explain the concept)
-
-## Main Explanation
-
-Use:
-
-### Heading 1
-- Point-wise explanation
-
-### Heading 2
-- Detailed explanation
-
-### Heading 3
-- Important concepts
-
-
-## Key Points
-
-- Important exam points
-- Technical terms
-- Keywords expected in university evaluation
-
-
 ## Advantages / Applications
-(if applicable)
-
-## Conclusion
-
-(summary)
+(if applicable).
 
 
 Important rules:
@@ -192,7 +157,6 @@ with tab1:
     if button:
         with st.spinner("Sumarizing......."):
             a=get_input(f,mark)
-            st.markdown(a)
             st.session_state.answer=a
 if st.session_state:
  st.markdown(st.session_state.answer)
