@@ -8,9 +8,9 @@ Api_key=os.getenv("GROQ_API_KEY")
 
 ##-------------------SETTING SESSION STATE TO NONE---------------
 if "answer" not in st.session_state:
-    st.session_state.answer=None
+    st.session_state.answer=" "
 if "ans" not in st.session_state:
-    st.session_state.ans=None
+    st.session_state.ans=" "
 
 ##--------------------VALIDATION OF API KEY-----------------------
 if Api_key is None:
@@ -27,7 +27,7 @@ def load_llm():
 llm=load_llm()
 
 
-tab1,tab2=st.tabs(["summarizer","Integrated AI"])
+tab1,tab2=st.tabs(["Summarizer","Integrated AI"])
 
 
 #Tab 2 function which pass values to prompt and invoke llm
@@ -194,10 +194,12 @@ with tab1:
             a=get_input(f,mark)
             st.markdown(a)
             st.session_state.answer=a
-st.markdown(st.session_state.answer)
+if st.session_state:
+ st.markdown(st.session_state.answer)
 
 #tab 2
 with tab2:
+
     questi_on=st.text_input("Ask your questions")
     button=st.button("Generate")
     if button:
@@ -206,3 +208,5 @@ with tab2:
               b=questions(st.session_state,questi_on)
               st.markdown(b)
               st.session_state.ans=b
+    
+    
